@@ -2,6 +2,8 @@
 Tutorial and Example for Advanced Programming 2024 - Faculty of Computer Science, Universitas Indonesia
 
 ---
+<details>
+<summary><b>Abous This Project</b></summary>
 
 ## About this Project
 In this repository, we have provided you a REST (REpresentational State Transfer) API project using Rocket web framework.
@@ -70,14 +72,43 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [ ] Commit: `Implement publish function in Program service and Program controller.`
     -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
     -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+</details>
+
+<details>
+<summary><b>Reflections</b></summary>
 
 ## Your Reflections
 This is the place for you to write reflections:
 
 ### Mandatory (Publisher) Reflections
 
+<details>
+<summary><b>Reflection 1</b></summary>
+
 #### Reflection Publisher-1
+
+1. Dalam desain pattern Observer, interface atau trait dalam Rust digunakan untuk memastikan bahwa semua subscriber memiliki metode yang sama untuk menerima pembaruan dari subject (atau observable). Dalam konteks BambangShop, Subscriber hanyalah sebuah struct sederhana yang menyimpan variabel url dan name. Saat ini, Subscriber tidak memiliki metode yang berinteraksi langsung dengan event dari observer pattern. Jadi sekarang, repository hanya menyimpan, menghapus, dan mengambil daftar subscriber, tetapi tidak ada mekanisme update otomatis ketika ada perubahan, atau bahasa database-nya adalah derrived attribute.  
+
+2. > Pertama, Vec adalah struktur data linear, di mana elemen disimpan secara berurutan dalam memori. Ini memiliki beberapa keterbatasan jika digunakan untuk memastikan uniknya id dan url. Misalnya adalah kompleksitas pencarian adalah O(n) untuk mengecek apakah suatu id atau url sudah ada, karena kita perlu mengiterasi seluruh Vec, begitu juga untuk penghapusan. Jadi, Karena Vec bekerja dengan indeks, ini lebih cocok untuk penyimpanan sederhana yang tidak membutuhkan lookup cepat berdasarkan kunci unik.  
+
+   > Oleh karena itu, DashMap diperlukan. DashMap<K, V> adalah thread-safe concurrent HashMap, yang bekerja dengan prinsip key-value store. Dalam konteks uniknya id pada Product dan url pada Subscriber, DashMap memberikan beberapa keuntungan, misalnya kompleksitas pencarian O(1), karena DashMap menggunakan hashing. Lalu penyimpanan dijamin unik, karena bila ada duplikat, yang baru menggantikan yang lama, atau bisa saja ditolak sesuai implementasi.
+
+3. Dalam konteks Rust dan design patterns, ada dua aspek utama yang perlu dipertimbangkan, yaitu keamanan dalam lingkungan multi-threaded dan efisiensi dalam penyimpanan dan akses data. Dan di sini, DashMap adalah implementasi concurrent HashMap, yang memungkinkan banyak thread membaca dan menulis tanpa perlu mengunci seluruh struktur data. Jadi, jika hanya satu thread yang mengakses SUBSCRIBERS, maka Singleton Pattern bisa digunakan dengan Mutex<HashMap>. Tetapi, jika banyak thread membaca dan menulis ke SUBSCRIBERS, DashMap tetap lebih baik karena lebih efisien dan tidak menyebabkan global locking seperti Mutex. Dan di sini, Rust sudah memastikan thread safety dengan compiler-nya, tapi pemilihan struktur data tetap penting untuk performa dan efisiensi.
+
+
+</details>
+
+<details>
+<summary><b>Reflection 2</b></summary>
 
 #### Reflection Publisher-2
 
+</details>
+
+<details>
+<summary><b>Reflection 3</b></summary>
+
 #### Reflection Publisher-3
+
+</details>
+</details>
