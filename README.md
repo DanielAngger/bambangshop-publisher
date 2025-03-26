@@ -116,5 +116,11 @@ This is the place for you to write reflections:
 
 #### Reflection Publisher-3
 
+1. Dalam kasus tutorial ini, kita menggunakan Push Model dalam Observer Pattern. Ada beberapa tanda, yaitu Publisher secara aktif mengirimkan data ke Subscriber, contohnya dalam pemberian notifikasi. Dan karena alasan ini juga Subscriber tidak perlu mengambil data sendiri, sehingga Pull Model tidak terpenuhi pada kasus ini. Jadi, tutorial kalini mengimplementasi Observer Pattern bentuk Push Model, karena publisher secara aktif mengirimkan notifikasi ke subscriber setiap kali ada perubahan, tanpa subscriber harus meminta data secara eksplisit.
+
+2. Jika kita menggunakan Pull Model dalam kasus tutorial ini, maka terdapat beberapa keuntungan dan kerugian dibandingkan dengan Push Model yang telah digunakan. Keuntungannya adalah Subscriber sekarang bisa mengambil data sesuai kebutuhannya, tidak "tenggelam" pada data yang dipaksakan. Dan dengan Pull Model juga, subscriber bisa meminta data hanya ketika diperlukan, mengurangi pengiriman yang tidak perlu. Sementara kerugiannya adalah jika subscriber ingin mendapatkan update secara real-time, mereka harus terus melakukan pengecekan ke publisher. Dan juga dalam Pull Model juga cenderung lebih lambat, karena ada jeda waktu antara perubahan data dan request pengambilan data dari subscriber.
+
+3. Jika kita tidak menggunakan multi-threading dalam proses notifikasi, maka proses notifikasi akan menjadi synchronous (blocking), atau dilakukan satu-persatu. Ini jelas akan menjadi masalah, karena bila ada banyak subscriber, maka waktu yang diperlukan akan lama. Dan juga server akan menjadi lambar, karena jika ada proses lain yang harus dijalankan oleh server, mereka harus menunggu proses notifikasi tadi selesai dulu. Dan ini membuat skalabilitas menjadi terbatas, karena bila terdapat banyak subscriber, akan menjadi bottleneck.
+
 </details>
 </details>

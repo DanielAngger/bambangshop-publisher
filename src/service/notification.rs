@@ -34,8 +34,8 @@ impl NotificationService {
         let mut payload: Notification = Notification {
             product_title: product.clone().title,
             product_type: String::from(product_type), 
-            product_url: product.clone().get_urt()
-            subscriber_name: String: :from(""), 
+            product_url: product.clone().get_url(),
+            subscriber_name: String::from(""), 
             status: String::from(status)
         };
 
