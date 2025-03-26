@@ -10,4 +10,5 @@ lazy_static! {
 pub struct SubscriberRepository;
 
 impl SubscriberRepository {
+    
 }
