@@ -83,7 +83,7 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 <details>
-<summary><b>Reflection 1</b></summary>
+<summary><b>Reflection Publisher 1</b></summary>
 
 #### Reflection Publisher-1
 
@@ -99,14 +99,20 @@ This is the place for you to write reflections:
 </details>
 
 <details>
-<summary><b>Reflection 2</b></summary>
+<summary><b>Reflection Publisher 2</b></summary>
 
 #### Reflection Publisher-2
+
+1. Sebenarnya, dalam Model-View-Controller (MVC), Model bertanggung jawab untuk menyimpan data dan juga mengimplementasikan business logic. Namun, dalam praktiknya, banyak aplikasi skala besar memisahkan Model menjadi Service dan Repository untuk meningkatkan struktur, fleksibilitas, dan maintainability. Terlebih lagi, kita sudah memperlajari prinsip S.O.L.I.D., dimana S, yang berarti Single Responsibility Principle, menganjurkan kita untuk membuat satu kelas yang menangani satu fungsi. Bila model menangani semuanya, prinsip ini dilanggar. Dan bila prinsip ini dilanggar,  Open/Closed Principle (OCP) juga jadi sulid dipenuhi, karena kita sulid untuk memperluas kode tanpa mengubah kode lama. Oleh karena itu, kita perlu memisahkan Model menjadi Service dan Repository.
+
+2. Jika kita hanya menggunakan Model tanpa memisahkan Service dan Repository, maka interaksi antara Product, Subscriber, dan Notification akan meningkatkan kompleksitas kode secara drastis. Mari kita bayangkan, jika kita hanya menggunakan Model, maka objek Model tersebut berlaku sebagai God-Object, yaitu objek yang menangani segala hal. Dalam proyek ini, Jika kita hanya menggunakan Model, maka Product, Subscriber, dan Notification harus menangani segala aspek, termasuk penyimpanan data (database query),business logic (validasi, aturan bisnis), dan integrasi API eksternal. Ini jelas bisa menjadi masalah, dimana perubahan kecil bisa saja menyebabkan error di semua aplikasi. Maka, perlu dilakukan pemisahan menjadi Repository dan Service.
+
+3. Ya, saya telah mengeksplorasi lebih lanjut tentang Postman dan menemukan bahwa alat ini sangat membantu dalam menguji API aplikasi apapun yang saya sedang kembangkan. Postman ini membantu saya dalam mengirim request dan melihat respons dengan mudah. Postman juga bisa menguji endpoint dengan data yang berbeda. Jadi, kesimpulannya, Postman adalah alat yang sangat berguna dalam pengembangan API karena mempermudah pengujian, debugging, dan dokumentasi API
 
 </details>
 
 <details>
-<summary><b>Reflection 3</b></summary>
+<summary><b>Reflection Publisher 3</b></summary>
 
 #### Reflection Publisher-3
 
